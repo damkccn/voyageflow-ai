@@ -1,24 +1,23 @@
-# VoyageFlow AI
+# VoyageFlow AI — Triagem de viagens
 
-Sistema de triagem para agência de viagens, com evolução planejada para IA generativa.
+**Status:** protótipo demonstrativo em evolução. O FlowAgent é o módulo de IA planejado para a próxima etapa.
 
-## Problema
-O consultor recebe contatos por WhatsApp sem as informações necessárias para preparar um orçamento.
+## Executar o código deste repositório
+Requer Python 3.10+ e não precisa de dependências externas:
 
-## Protótipo inicial
-- Formulário de triagem com perguntas condicionais
-- Registro de solicitações e geração de protocolo
-- Painel do consultor e direcionamento ao WhatsApp
+```bash
+python app.py
+```
 
-**Status:** protótipo local; não validado para produção.
+Acesse http://127.0.0.1:8765. O formulário gera um protocolo, registra a solicitação em SQLite local e devolve categoria, prioridade e sugestão de resposta **baseadas em regras, não em LLM**.
 
-## Evolução: FlowAgent AI
-Módulo em desenvolvimento para classificar intenção e prioridade, resumir solicitações e sugerir respostas para revisão humana. Há um protótipo separado com regras e integração opcional com LLM; a integração completa ao VoyageFlow ainda está pendente.
+Testes: `python -m unittest discover -v`.
 
-## Tecnologias
-Python, FastAPI, SQLite, HTML, CSS, JavaScript.
+## Evolução planejada: FlowAgent AI
+- Integrar um LLM para resumos e sugestões estruturadas com validação de saída
+- Incluir revisão humana e painel autenticado do consultor
+- Adicionar testes de integração e controles de segurança/privacidade
 
-## Próximos passos
-Integração entre módulos, testes de ponta a ponta, autenticação, segurança e LGPD.
+Este repositório contém uma **demonstração simplificada**. O protótipo anterior de formulário multipasso e painel é uma base de desenvolvimento separada; não está integrado a esta demonstração. Não use dados pessoais reais nem disponibilize este servidor diretamente na internet.
 
-Nunca publique chaves de API, arquivos .env reais ou dados de clientes.
+[Portfólio](https://damkccn.github.io/damaris-portfolio/cases/voyageflow.html) · [Instruções](DEVELOPMENT.md)
